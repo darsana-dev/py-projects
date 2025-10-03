@@ -53,7 +53,7 @@ def view_summary():
         bar = "█" * int(percent // 2)
         summary += f"{cat}: ₹{amt} ({percent:.1f}%) {bar}\n"
 
-    summary += f"\n💰 Total Spent: ₹{total}"
+    summary += f"\n Total Spent: ₹{total}"
     messagebox.showinfo("Summary", summary)
 
 # GUI setup
@@ -73,3 +73,4 @@ tk.Button(root, text="Add Expense", command=add_expense).grid(row=2, column=0, p
 tk.Button(root, text="View Summary", command=view_summary).grid(row=2, column=1, padx=5, pady=5)
 
 root.mainloop()
+
