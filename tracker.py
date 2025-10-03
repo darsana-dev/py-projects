@@ -15,7 +15,7 @@ def add_expense(category, amount):
     with open(FILE, "a", newline="") as f:
         writer = csv.writer(f)
         writer.writerow([datetime.now().strftime("%Y-%m-%d"), category, amount])
-    print(f"✅ Added ₹{amount} to {category}")
+    print(f"Added ₹{amount} to {category}")
 
 def view_summary():
     expenses = {}
@@ -29,13 +29,13 @@ def view_summary():
             expenses[cat] = expenses.get(cat, 0) + amt
             total += amt
 
-    print("\n📊 Expense Summary:")
+    print("\n Expense Summary:")
     for cat, amt in expenses.items():
         percent = (amt / total) * 100 if total > 0 else 0
         bar = "█" * int(percent // 2)  # ASCII bar chart
         print(f"{cat}: ₹{amt} ({percent:.1f}%) {bar}")
 
-    print(f"\n💰 Total Spent: ₹{total}")
+    print(f"\n Total Spent: ₹{total}")
 
 def main():
     init_file()
@@ -49,10 +49,11 @@ def main():
         elif choice == "2":
             view_summary()
         elif choice == "3":
-            print("👋 Exiting...")
+            print(" see u next time")
             break
         else:
-            print("❌ Invalid choice!")
+            print(" Invalid choice!")
 
 if __name__ == "__main__":
     main()
+
